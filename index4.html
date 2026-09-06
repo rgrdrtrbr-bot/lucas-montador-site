@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Montador de Móveis & Instalações | Santiago - RS</title>
+    <meta name="description" content="Montagem de móveis, instalação, limpeza e manutenção de ar-condicionado e conserto de eletrodomésticos em Santiago - RS. Serviços rápidos, limpos e com garantia.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        function handleImgError(img, fallbackCategory, originalBaseName) {
+            if (!img.dataset.tried) {
+                img.dataset.tried = "1";
+                // Tenta alternar entre .jpg e .jpeg caso a extensão salva localmente seja diferente
+                var currentSrc = img.src;
+                if (currentSrc.endsWith('.jpeg')) {
+                    img.src = originalBaseName + '.jpg';
+                    return;
+                } else if (currentSrc.endsWith('.jpg')) {
+                    img.src = originalBaseName + '.jpeg';
+                    return;
+                }
+            }
+            
+            // Fallback para imagem ilustrativa em HD caso o arquivo não esteja no ambiente de visualização
+            img.onerror = null;
+            var fallbacks = {
+                'cozinha': 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80',
+                'wardrobe': 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=800&q=80',
+                'sink': 'https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?auto=format&fit=crop&w=800&q=80',
+                'panel': 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80',
+                'logo': 'https://placehold.co/250x80/0284c7/ffffff?text=Lucas+Instala%C3%A7%C3%B5es',
+                'rifa': 'https://placehold.co/600x600/0f172a/ffffff?text=A%C3%A7%C3%A3o+Entre+Amigos+-+Ar+Condicionado',
+                'cartao': 'https://placehold.co/600x350/0f172a/ffffff?text=Cart%C3%A3o+de+Visita+Lucas'
+            };
+            img.src = fallbacks[fallbackCategory] || 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80';
+        }
+    </script>
+
+    <style>
+        :root {
+            --primary: #0284c7;
+            --primary-dark: #0369a1;
+            --secondary: #0f172a;
+            --accent-red: #dc2626;
+            --accent-red-hover: #b91c1c;
+            --whatsapp-green: #25D366;
+            --whatsapp-hover: #128C7E;
+            --facebook-blue: #1877F2;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #334155;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --radius-lg: 16px;
+            --radius-md: 10px;
+            --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 20px 30px -10px rgba(0, 0, 0, 0.12);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #ffffff;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--secondary);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: #ffffff;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: var(--whatsapp-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.3);
+        }
+
+        .btn-red {
+            background-color: var(--accent-red);
+            color: #ffffff;
+        }
+
+        .btn-red:hover {
+            background-color: var(--accent-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(220, 38, 38, 0.35);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            padding: 8px 0;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo img {
+            height: 75px;
+            max-height: 85px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .brand-logo img:hover {
+            transform: scale(1.03);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--text-main);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        /* --- HERO --- */
+        .hero {
+            padding: 70px 0 60px;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #e0f2fe;
+            color: var(--primary-dark);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid #bae6fd;
+        }
+
+        .hero-content h1 {
+            font-size: 2.7rem;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+
+        .hero-content h1 span {
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .hero-card-preview {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--border-color);
+        }
+
+        .hero-card-preview h3 {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-list {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .hero-list li {
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+            color: var(--text-main);
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .hero-list li:last-child {
+            border-bottom: none;
+        }
+
+        .hero-list i {
+            color: var(--whatsapp-green);
+        }
+
+        /* --- SEÇÃO PROMO / RIFA --- */
+        .promo-section {
+            padding: 50px 0;
+            background: #ffffff;
+            position: relative;
+            z-index: 10;
+        }
+
+        .promo-card {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.25);
+            border: 2px solid #38bdf8;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .promo-image-box {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .promo-image-box img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .promo-tag {
+            background: #0284c7;
+            color: #ffffff;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            padding: 5px 14px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+
+        .promo-title {
+            font-size: 2.1rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .promo-prize {
+            font-size: 1.25rem;
+            color: #38bdf8;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .promo-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+            background: rgba(255,255,255,0.05);
+            padding: 15px;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .promo-item-label {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .promo-item-value {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .promo-pix-box {
+            background: #ffffff;
+            color: var(--secondary);
+            padding: 20px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .promo-pix-title {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .promo-pix-key {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+            margin: 6px 0;
+            font-family: monospace;
+            background: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        /* --- SEÇÕES GERAIS --- */
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        .section-title-wrapper {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- GALERIA DE FOTOS DO PORTFÓLIO --- */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px;
+        }
+
+        .portfolio-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .portfolio-img-wrapper {
+            width: 100%;
+            height: 320px;
+            overflow: hidden;
+            background: #f1f5f9;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .portfolio-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .portfolio-card:hover .portfolio-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-content {
+            padding: 20px;
+        }
+
+        .portfolio-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .portfolio-title {
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+        }
+
+        /* --- SOBRE O LUCAS --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: var(--text-main);
+        }
+
+        .card-img-container {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 3px solid white;
+            background: white;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- SERVIÇOS --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+            border-color: #bae6fd;
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 12px;
+            background: #e0f2fe;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--text-main);
+        }
+
+        .service-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* --- DIFERENCIAIS --- */
+        .diff-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .diff-card {
+            background: white;
+            padding: 25px;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .diff-card i {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .diff-card h4 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .payment-methods {
+            margin-top: 40px;
+            background: #ffffff;
+            padding: 25px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .payment-badges {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .payment-badge {
+            background: #f1f5f9;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- DEPOIMENTOS --- */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-color);
+        }
+
+        .stars {
+            color: #f59e0b;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            color: var(--text-main);
+            margin-bottom: 20px;
+        }
+
+        .author-name {
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .author-location {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* --- CONTATO --- */
+        .contact-card {
+            background: var(--secondary);
+            color: white;
+            border-radius: var(--radius-lg);
+            padding: 50px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .contact-info h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-info p {
+            color: #94a3b8;
+            margin-bottom: 30px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .contact-item i {
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #38bdf8;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-link-card {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 10px 16px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+
+        .social-link-card:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateX(4px);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .social-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .social-btn.facebook {
+            background: var(--facebook-blue);
+        }
+
+        .social-btn:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background: #090d16;
+            color: #64748b;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: all 0.3s ease;
+            animation: pulse 2s infinite;
+        }
+
+        .floating-whatsapp:hover {
+            transform: scale(1.1);
+            background-color: var(--whatsapp-hover);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 992px) {
+            .hero-grid, .about-grid, .promo-card, .contact-card {
+                grid-template-columns: 1fr;
+            }
+            .nav-links { display: none; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .brand-logo img { height: 60px; }
+        }
+
+        @media (max-width: 600px) {
+            .hero-cta-group { flex-direction: column; align-items: stretch; }
+            .btn { width: 100%; }
+            .promo-details-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="brand-logo">
+                <img src="logomarca.jpeg" alt="Lucas Instalações Logo" onerror="handleImgError(this, 'logo', 'logomarca')">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#promocao">Ação Entre Amigos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#portfolio">Trabalhos Realizados</a></li>
+                <li><a href="#diferenciais">Diferenciais</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp">
+                <i class="fa-brands fa-whatsapp"></i> (55) 99711-7268
+            </a>
+        </div>
+    </nav>
+
+    <section id="inicio" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-location-dot"></i> Atendendo Santiago - RS e Região
+                </div>
+                <h1>Montagem de Móveis, Instalações & <span>Climatização</span></h1>
+                <p>Do guarda-roupa ao ar-condicionado, oferecemos serviços com precisão, agilidade e garantia. Cuidamos da sua casa com a dedicação que você merece.</p>
+                <div class="hero-cta-group">
+                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Preciso%20de%20um%20or%C3%A7amento%20para%20minha%20casa." target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Pedir Orçamento no WhatsApp
+                    </a>
+                    <a href="#servicos" class="btn btn-outline">
+                        Ver Todos os Serviços
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-card-preview">
+                <h3><i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i> Nossas Soluções para Seu Lar</h3>
+                <ul class="hero-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Montagem e Desmontagem de Móveis</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Instalação & Limpeza de Ar-Condicionado</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Conserto de Máquinas de Lavar e Geladeiras</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Venda de Equipamentos de Climatização</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Instalação de Cozinhas, Painéis de TV e Eletros</li>
+                </ul>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 8px; font-size: 0.85rem; color: var(--text-muted); text-align: center;">
+                    <i class="fa-solid fa-credit-card"></i> Aceitamos cartões de crédito, débito e PIX!
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="promocao" class="promo-section">
+        <div class="container">
+            <div class="promo-card">
+                <div>
+                    <span class="promo-tag"><i class="fa-solid fa-gift"></i> Sorteio Especial</span>
+                    <h2 class="promo-title">Ação Entre Amigos</h2>
+                    <div class="promo-prize">
+                        <i class="fa-solid fa-snowflake"></i> 1 Ar-Condicionado 12 Mil BTUs (Novo na Caixa Lacrado)
+                    </div>
+                    <p style="color: #cbd5e1; font-size: 0.95rem;">Participe da nossa Rifa e concorra a um Ar-Condicionado Novinho para deixar sua casa na temperatura ideal! Apenas R$ 10,00 por bilhete.</p>
+                    
+                    <div class="promo-details-grid">
+                        <div>
+                            <div class="promo-item-label">Data do Sorteio</div>
+                            <div class="promo-item-value"><i class="fa-regular fa-calendar"></i> 11/09/2026 às 19h</div>
+                            <small style="color: #94a3b8;">Ao vivo no Facebook: Lucas Instalacao</small>
+                        </div>
+                        <div>
+                            <div class="promo-item-label">Valor do Bilhete</div>
+                            <div class="promo-item-value" style="color: #4ade80;">R$ 10,00 cada</div>
+                            <small style="color: #94a3b8;">Sua chave PIX garante seu número</small>
+                        </div>
+                    </div>
+
+                    <div class="promo-pix-box">
+                        <div class="promo-pix-title"><i class="fa-solid fa-pix" style="color: #32bcad;"></i> Chave PIX para Participar</div>
+                        <div class="promo-pix-key">55 99600-6074</div>
+                        <div style="font-size: 0.85rem; font-weight: 600; color: var(--text-main);">Titular: Valquiria Lopes</div>
+                        <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20fiz%20o%20PIX%20da%20Rifa%20do%20Ar-Condicionado%20e%20gostaria%20de%20confirmar%20meus%20n%C3%BAmeros!" target="_blank" class="btn btn-red" style="width: 100%; margin-top: 15px;">
+                            <i class="fa-brands fa-whatsapp"></i> Enviar Comprovante no WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="promo-image-box">
+                    <img src="rifalucas.jpeg" alt="Poster da Ação Entre Amigos - Rifa de Ar-Condicionado" onerror="handleImgError(this, 'rifa', 'rifalucas')">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <span class="section-subtitle">Sobre o Lucas</span>
+                    <h2 class="section-title">Profissionalismo, Pontualidade e Cuidado com Seu Lar</h2>
+                    <div class="about-text">
+                        <p>Seja para renovar o ambiente com móveis novos ou garantir o funcionamento perfeito dos seus eletrodomésticos, você precisa de um profissional experiente e de total confiança.</p>
+                        <p>O <strong>Lucas Montador de Móveis & Instalações</strong> atua em Santiago - RS e região oferecendo um atendimento direto, rápido e transparente. Trabalhamos com ferramentas de ponta para garantir acabamentos limpos e preservação dos seus pertences.</p>
+                    </div>
+                    <div style="margin-top: 25px;">
+                        <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o." target="_blank" class="btn btn-primary">
+                            <i class="fa-brands fa-whatsapp"></i> Falar Diretamente com o Lucas
+                        </a>
+                    </div>
+                </div>
+
+                <div class="card-img-container">
+                    <img src="cartao_lucas.jpeg" alt="Cartão de Visita Lucas Montador de Móveis" onerror="handleImgError(this, 'cartao', 'cartao_lucas')">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <span class="section-subtitle">Nossos Serviços</span>
+                <h2 class="section-title">Soluções Práticas para Sua Casa</h2>
+                <p style="color: var(--text-muted);">Resolvemos a montagem de móveis, climatização e reparos de eletros em uma única visita.</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Serviço 1 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon">
+                            <i class="fa-solid fa-couch"></i>
+                        </div>
+                        <h3 class="service-title">Montagem de Móveis</h3>
+                        <ul class="service-list">
+                            <li>Montagem e desmontagem de móveis novos e usados</li>
+                            <li>Instalação de guarda-roupas, cozinhas e modulados</li>
+                            <li>Fixação de painéis para TV com suporte reforçado</li>
+                            <li>Pequenos reparos, troca de dobradiças e roldanas</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20or%C3%A7amento%20para%20montagem%20de%20m%C3%B3veis." target="_blank" class="btn btn-outline" style="width: 100%;">
+                        <i class="fa-brands fa-whatsapp"></i> Cotar Móveis
+                    </a>
+                </div>
+
+                <!-- Serviço 2 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon" style="background: #e0f2fe; color: #0284c7;">
+                            <i class="fa-solid fa-snowflake"></i>
+                        </div>
+                        <h3 class="service-title">Ar-Condicionado & Climatização</h3>
+                        <ul class="service-list">
+                            <li>Venda de equipamentos de Ar-Condicionado novos</li>
+                            <li>Instalação técnica preventiva e corretiva</li>
+                            <li>Higienização profunda (elimina fungos e bactérias)</li>
+                            <li>Manutenção e recarga de gás refrigerante</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20servi%C3%A7o%20para%20Ar-Condicionado." target="_blank" class="btn btn-outline" style="width: 100%;">
+                        <i class="fa-brands fa-whatsapp"></i> Cotar Ar-Condicionado
+                    </a>
+                </div>
+
+                <!-- Serviço 3 -->
+                <div class="service-card">
+                    <div>
+                        <div class="service-icon" style="background: #fef3c7; color: #d97706;">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                        </div>
+                        <h3 class="service-title">Conserto de Eletrodomésticos</h3>
+                        <ul class="service-list">
+                            <li>Conserto e manutenção de Máquinas de Lavar</li>
+                            <li>Manutenção técnica de Refrigeradores e Geladeiras</li>
+                            <li>Instalação de Depuradores de Ar, Coifas e Cooktops</li>
+                            <li>Instalação de Purificadores e Filtros de Água</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20conserto%20ou%20instala%C3%A7%C3%A3o%20de%20eletrodom%C3%A9stico." target="_blank" class="btn btn-outline" style="width: 100%;">
+                        <i class="fa-brands fa-whatsapp"></i> Cotar Eletrodomésticos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="section-padding">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <span class="section-subtitle">Galeria de Trabalhos</span>
+                <h2 class="section-title">Serviços Executados com Excelência</h2>
+                <p style="color: var(--text-muted);">Confira fotos reais de móveis montados e instalações concluídas em Santiago - RS e região.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Foto 1 (Cozinha com Pia) -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-wrapper">
+                        <img src="movel1.jpg" alt="Montagem de Cozinha com Pia e Cooktop" onerror="handleImgError(this, 'sink', 'movel1')">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Cozinha Modulada</span>
+                        <h3 class="portfolio-title">Montagem de Cozinha & Instalação de Pia</h3>
+                        <p class="portfolio-desc">Montagem de armários superiores, balcão com pia inox, cooktop e purificador de água.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 (Cozinha Completa com Cristaleira) -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-wrapper">
+                        <img src="movel2.jpeg" alt="Montagem de Cozinha Completa Branca com Cristaleira" onerror="handleImgError(this, 'cozinha', 'movel2')">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Móveis Sob Medida / Modulados</span>
+                        <h3 class="portfolio-title">Cozinha Completa com Cristaleira</h3>
+                        <p class="portfolio-desc">Alinhamento perfeito de módulos, portas de vidro, gaveteiros e nichos para forno e geladeira.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 3 (Guarda-Roupa com Espelho) -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-wrapper">
+                        <img src="movel3.jpg" alt="Montagem de Guarda-Roupa de Correr com Espelho" onerror="handleImgError(this, 'wardrobe', 'movel3')">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Dormitórios</span>
+                        <h3 class="portfolio-title">Montagem de Guarda-Roupa com Espelho</h3>
+                        <p class="portfolio-desc">Montagem de roupeiro grande de portas de correr com espelho central e regulagem suave.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 4 (Painéis & Salas) -->
+                <div class="portfolio-card">
+                    <div class="portfolio-img-wrapper">
+                        <img src="movel_com_logomarca.jpeg" alt="Serviços Profissionais Lucas Montador" onerror="handleImgError(this, 'panel', 'movel_com_logomarca')">
+                    </div>
+                    <div class="portfolio-content">
+                        <span class="portfolio-tag">Painéis & Salas</span>
+                        <h3 class="portfolio-title">Painéis de TV, Racks e Roupeiros</h3>
+                        <p class="portfolio-desc">Instalações seguras em paredes, alinhamento de portas e montagem com acabamento impecável.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="diferenciais" class="section-padding bg-light">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <span class="section-subtitle">Nossos Diferenciais</span>
+                <h2 class="section-title">Por Que Escolher o Lucas Instalações?</h2>
+            </div>
+
+            <div class="diff-grid">
+                <div class="diff-card">
+                    <i class="fa-solid fa-broom"></i>
+                    <h4>Ambiente Sempre Limpo</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Trabalho limpo e organizado. Seu espaço fica pronto para uso.</p>
+                </div>
+                <div class="diff-card">
+                    <i class="fa-solid fa-clock"></i>
+                    <h4>Pontualidade Rigorosa</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Horário marcado e respeitado com total responsabilidade.</p>
+                </div>
+                <div class="diff-card">
+                    <i class="fa-solid fa-shield-check"></i>
+                    <h4>Garantia no Serviço</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Serviço feito com padrão técnico para máxima durabilidade.</p>
+                </div>
+                <div class="diff-card">
+                    <i class="fa-solid fa-wallet"></i>
+                    <h4>Facilidade no Pagamento</h4>
+                    <p style="font-size: 0.9rem; color: var(--text-muted);">Aceitamos cartões de crédito e débito no local do serviço.</p>
+                </div>
+            </div>
+
+            <div class="payment-methods">
+                <h4 style="font-size: 1.1rem; color: var(--secondary);">Formas de Pagamento Aceitas</h4>
+                <div class="payment-badges">
+                    <div class="payment-badge"><i class="fa-brands fa-cc-mastercard" style="color: #eb001b;"></i> Mastercard</div>
+                    <div class="payment-badge"><i class="fa-brands fa-cc-visa" style="color: #1a1f71;"></i> Visa</div>
+                    <div class="payment-badge"><i class="fa-solid fa-credit-card" style="color: #00a4e4;"></i> Elo</div>
+                    <div class="payment-badge"><i class="fa-brands fa-cc-amex" style="color: #2e77bc;"></i> Hipercard / Amex</div>
+                    <div class="payment-badge"><i class="fa-solid fa-pix" style="color: #32bcad;"></i> Pix</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-title-wrapper">
+                <span class="section-subtitle">Avaliações</span>
+                <h2 class="section-title">O Que Dizem os Nossos Clientes</h2>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"O Lucas montou minha cozinha modulada e instalou a pia e o cooktop. Trabalho perfeito, alinhamento nota 10 e tudo muito limpo!"</p>
+                    <div class="author-name">Mariana S.</div>
+                    <div class="author-location">Santiago - RS</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Chamei para fazer a higienização do ar-condicionado e acabou consertando a minha máquina de lavar na mesma visita. Muito prático!"</p>
+                    <div class="author-name">Carlos A.</div>
+                    <div class="author-location">Santiago - RS</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"Muito educado e pontual. O guarda-roupa de portas de correr com espelho ficou lindo e perfeito. Recomendo com certeza!"</p>
+                    <div class="author-name">Fernanda L.</div>
+                    <div class="author-location">Santiago - RS</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="section-padding bg-light">
+        <div class="container">
+            <div class="contact-card">
+                <div class="contact-info">
+                    <h3>Atendimento em Santiago - RS</h3>
+                    <p>Entre em contato pelo WhatsApp para agendar seu serviço ou tirar dúvidas sobre orçamentos e a Rifa do Ar-Condicionado.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            <div>
+                                <strong style="display: block;">WhatsApp / Telefone</strong>
+                                <span>(55) 99711-7268</span>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <div>
+                                <strong style="display: block;">Região de Atendimento</strong>
+                                <span>Santiago - RS e cidades vizinhas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 30px;">
+                        <strong style="display: block; margin-bottom: 12px; color: #ffffff;">Siga nas Redes Sociais:</strong>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/lucas.instalacao?stkn=dzZseXhvcmd0eDZ0" target="_blank" class="social-link-card" title="Instagram @lucas.instalacao">
+                                <span class="social-btn instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </span>
+                                <div>
+                                    <span style="display: block; font-size: 0.78rem; color: #38bdf8; font-weight: 700; text-transform: uppercase;">Instagram Profissional</span>
+                                    <span style="font-weight: 600; font-size: 0.95rem;">@lucas.instalacao</span>
+                                </div>
+                            </a>
+
+                            <a href="https://www.instagram.com/lucasmello7006?stkn=MWpjdjVyZWt4YXNyNw==" target="_blank" class="social-link-card" title="Instagram @lucasmello7006">
+                                <span class="social-btn instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </span>
+                                <div>
+                                    <span style="display: block; font-size: 0.78rem; color: #38bdf8; font-weight: 700; text-transform: uppercase;">Instagram Serviços</span>
+                                    <span style="font-weight: 600; font-size: 0.95rem;">@lucasmello7006</span>
+                                </div>
+                            </a>
+
+                            <a href="https://web.facebook.com/01montadorlucas/?_rdc=1&_rdr#" target="_blank" class="social-link-card" title="Facebook Lucas Instalacao">
+                                <span class="social-btn facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </span>
+                                <div>
+                                    <span style="display: block; font-size: 0.78rem; color: #38bdf8; font-weight: 700; text-transform: uppercase;">Facebook</span>
+                                    <span style="font-weight: 600; font-size: 0.95rem;">Lucas Instalacao</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; background: rgba(255,255,255,0.05); padding: 35px; border-radius: var(--radius-md); border: 1px solid rgba(255,255,255,0.1);">
+                    <i class="fa-solid fa-comments" style="font-size: 3.5rem; color: #38bdf8; margin-bottom: 20px;"></i>
+                    <h4 style="color: white; font-size: 1.4rem; margin-bottom: 10px;">Chamar no WhatsApp</h4>
+                    <p style="color: #94a3b8; font-size: 0.9rem; margin-bottom: 25px;">Atendimento direto e sem intermediários com o Lucas.</p>
+                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                        <i class="fa-brands fa-whatsapp"></i> Solicitar Orçamento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Lucas Montador de Móveis & Instalações. Todos os direitos reservados. Santiago - RS.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Encontrei%20seu%20site%20e%20gostaria%20de%20um%20or%C3%A7amento!" class="floating-whatsapp" target="_blank" title="Falar no WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
