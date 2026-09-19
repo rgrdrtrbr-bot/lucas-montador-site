@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lucas Montador de Móveis & Instalações - Santiago RS</title>
+    <title>Lucas Instalações - Montagem de Móveis, Climatização & Eletros | Santiago RS</title>
+    <meta name="description" content="Lucas Instalações em Santiago RS: Montagem de móveis, instalação e higienização de ar-condicionado, conserto de eletrodomésticos e refrigeração com técnica e garantia.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +16,7 @@
 
     <style>
         :root {
-            /* Warm Slate & Electric Cyan Palette */
+            /* Palette: Deep Slate, Primary Cyan Blue, Crisp Whites, Vibrant Green */
             --bg-body: #f8fafc;
             --bg-card: #ffffff;
             --navy-deep: #0b132b;
@@ -23,22 +24,20 @@
             --primary: #0284c7;
             --primary-hover: #0369a1;
             --cyan-glow: #38bdf8;
-            --accent-red: #ef4444;
-            --accent-red-hover: #dc2626;
+            --cyan-light: #e0f2fe;
             --whatsapp: #25D366;
             --whatsapp-hover: #128C7E;
             --facebook: #1877F2;
             --text-main: #1e293b;
             --text-muted: #64748b;
             --border-light: #e2e8f0;
-            --border-glow: rgba(56, 189, 248, 0.2);
             --radius-xl: 20px;
             --radius-lg: 14px;
             --radius-md: 10px;
             --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04);
             --shadow-md: 0 10px 25px -5px rgba(15, 23, 42, 0.08);
             --shadow-lg: 0 20px 40px -10px rgba(15, 23, 42, 0.12);
-            --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.2);
+            --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.25);
         }
 
         html, body {
@@ -68,7 +67,6 @@
             letter-spacing: -0.02em;
         }
 
-        /* Utility Classes */
         .container {
             max-width: 1240px;
             margin: 0 auto;
@@ -320,7 +318,7 @@
             font-size: 1.1rem;
         }
 
-        /* --- ABOUT SECTION --- */
+        /* --- SECTION STYLING --- */
         .section-padding {
             padding: 70px 0;
         }
@@ -331,15 +329,211 @@
 
         .section-header {
             text-align: center;
-            max-width: 720px;
+            max-width: 760px;
             margin: 0 auto 45px;
         }
 
         .section-title {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             margin-top: 8px;
         }
 
+        /* --- SERVICES CAROUSEL COMPONENT --- */
+        .carousel-wrapper {
+            position: relative;
+            max-width: 100%;
+            overflow: hidden;
+            border-radius: var(--radius-xl);
+            padding: 10px 0 20px;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 24px;
+            transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+            will-change: transform;
+        }
+
+        .carousel-slide {
+            flex: 0 0 calc(33.333% - 16px);
+            min-width: 300px;
+            background: white;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .carousel-slide:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--cyan-glow);
+        }
+
+        .slide-img-box {
+            position: relative;
+            height: 210px;
+            width: 100%;
+            overflow: hidden;
+            background: var(--navy-deep);
+        }
+
+        .slide-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide:hover .slide-img-box img {
+            transform: scale(1.06);
+        }
+
+        .slide-badge {
+            position: absolute;
+            top: 14px;
+            left: 14px;
+            background: rgba(11, 19, 43, 0.85);
+            color: #38bdf8;
+            padding: 4px 12px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .slide-body {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .slide-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--navy-deep);
+        }
+
+        .slide-desc {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 18px;
+            line-height: 1.55;
+        }
+
+        .slide-features {
+            list-style: none;
+            margin-bottom: 22px;
+        }
+
+        .slide-features li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            font-size: 0.86rem;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+
+        .slide-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .carousel-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .carousel-btn {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid var(--border-light);
+            color: var(--navy-deep);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .carousel-btn:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: scale(1.08);
+        }
+
+        .carousel-indicators {
+            display: flex;
+            gap: 8px;
+        }
+
+        .indicator-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 9999px;
+            background: var(--border-light);
+            cursor: pointer;
+            transition: all 0.25s ease;
+        }
+
+        .indicator-dot.active {
+            width: 28px;
+            background: var(--primary);
+        }
+
+        /* --- VIDEO SHOWCASE SECTION --- */
+        .video-section-card {
+            background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-surface) 100%);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            color: white;
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 36px;
+            align-items: center;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+            background: #000;
+            border: 2px solid rgba(56, 189, 248, 0.3);
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: auto;
+            max-height: 420px;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* --- ABOUT SECTION --- */
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -360,105 +554,6 @@
             height: auto;
             border-radius: var(--radius-lg);
             display: block;
-        }
-
-        /* --- SERVICES TABBED EXPLORER --- */
-        .services-nav {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-bottom: 35px;
-            flex-wrap: wrap;
-        }
-
-        .service-tab-btn {
-            padding: 10px 20px;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            border: 1px solid var(--border-light);
-            background: white;
-            color: var(--text-main);
-            cursor: pointer;
-            transition: all 0.25s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .service-tab-btn.active, .service-tab-btn:hover {
-            background: var(--primary);
-            color: white;
-            border-color: var(--primary);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .service-panel {
-            display: none;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-            gap: 25px;
-        }
-
-        .service-panel.active {
-            display: grid;
-            animation: fadeIn 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .service-card {
-            background: white;
-            border-radius: var(--radius-xl);
-            padding: 30px;
-            box-shadow: var(--shadow-md);
-            border: 1px solid var(--border-light);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: all 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--cyan-glow);
-        }
-
-        .service-icon-wrapper {
-            width: 56px;
-            height: 56px;
-            border-radius: var(--radius-lg);
-            background: #f0f9ff;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 18px;
-        }
-
-        .service-card-list {
-            list-style: none;
-            margin: 18px 0 22px;
-        }
-
-        .service-card-list li {
-            position: relative;
-            padding-left: 24px;
-            margin-bottom: 10px;
-            font-size: 0.92rem;
-            color: var(--text-main);
-        }
-
-        .service-card-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: 800;
         }
 
         /* --- INTERACTIVE BUDGET ESTIMATOR WIDGET --- */
@@ -847,18 +942,19 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- ADVANCED MOBILE RESPONSIVE FIXES --- */
+        /* --- MOBILE RESPONSIVE FIXES --- */
         @media (max-width: 992px) {
-            .hero-grid, .about-grid, .contact-card {
+            .hero-grid, .about-grid, .contact-card, .video-section-card {
                 grid-template-columns: 1fr;
             }
             .nav-links { display: none; }
             .hero-title { font-size: 2.2rem; }
             .brand-logo img { height: 55px; }
-            .contact-card { padding: 30px 20px; }
+            .contact-card, .video-section-card { padding: 30px 20px; }
+            .carousel-slide { flex: 0 0 calc(50% - 12px); }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 640px) {
             .container {
                 padding: 0 16px;
             }
@@ -872,10 +968,6 @@
             }
             .brand-logo img {
                 height: 48px;
-            }
-            .navbar .btn-whatsapp {
-                padding: 8px 14px;
-                font-size: 0.82rem;
             }
             .hero {
                 padding: 35px 0 45px;
@@ -897,8 +989,8 @@
             .section-title {
                 font-size: 1.75rem;
             }
-            .estimator-card {
-                padding: 24px 16px;
+            .carousel-slide {
+                flex: 0 0 100%;
             }
         }
     </style>
@@ -921,7 +1013,12 @@
             // Fallback HD preview images if running in sandbox or without local files
             img.onerror = null;
             var fallbacks = {
+                'ac_indoor': 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80',
+                'ac_outdoor': 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80',
                 'cozinha': 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=80',
+                'cleaning': 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80',
+                'piping': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80',
+                'drilling': 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1000&q=80',
                 'wardrobe': 'https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=1000&q=80',
                 'sink': 'https://images.unsplash.com/photo-1588854337221-4cf9fa96059c?auto=format&fit=crop&w=1000&q=80',
                 'panel': 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80',
@@ -942,8 +1039,9 @@
             </a>
             <ul class="nav-links">
                 <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços Especializados</a></li>
+                <li><a href="#video-demonstracao">Vídeo Real</a></li>
                 <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
                 <li><a href="#portfolio">Trabalhos Realizados</a></li>
                 <li><a href="#diferenciais">Diferenciais</a></li>
                 <li><a href="#faq">Dúvidas</a></li>
@@ -962,7 +1060,7 @@
                 <span class="badge badge-cyan">
                     <i class="fa-solid fa-location-dot"></i> Santiago - RS & Região
                 </span>
-                <h1 class="hero-title">Montagem de Móveis, Instalações & <span>Climatização</span></h1>
+                <h1 class="hero-title">Montagem de Móveis, Climatização & <span>Instalações Técnicas</span></h1>
                 <p class="hero-subtitle">Móveis alinhados, ar-condicionado higienizado e eletrodomésticos funcionando como novos. Cuidamos do seu lar com técnica, pontualidade e transparência.</p>
                 
                 <div style="display: flex; gap: 12px; flex-wrap: wrap;">
@@ -977,11 +1075,11 @@
                 <div class="hero-stats">
                     <div class="stat-item">
                         <h4>+1.200</h4>
-                        <p>Móveis Montados</p>
+                        <p>Serviços Executados</p>
                     </div>
                     <div class="stat-item">
                         <h4>100%</h4>
-                        <p>Garantia de Serviço</p>
+                        <p>Garantia Técnica</p>
                     </div>
                     <div class="stat-item">
                         <h4>Cartão & PIX</h4>
@@ -993,11 +1091,11 @@
             <div class="hero-card">
                 <h3><i class="fa-solid fa-screwdriver-wrench" style="color: var(--primary);"></i> Soluções Rápidas no Seu Lar</h3>
                 <ul class="hero-checklist">
-                    <li><i class="fa-solid fa-circle-check"></i> Montagem e Desmontagem de Móveis</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Instalação & Higienização de Ar-Condicionado</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Instalação & Manutenção de Ar-Condicionado</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Higienização Preventiva com Coletor Sanitário</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Montagem e Desmontagem de Móveis e Cozinhas</li>
                     <li><i class="fa-solid fa-circle-check"></i> Conserto de Máquinas de Lavar e Geladeiras</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Venda de Equipamentos de Climatização</li>
-                    <li><i class="fa-solid fa-circle-check"></i> Instalação de Painéis de TV e Cozinhas</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Perfuração Limpa com Broca Copo e Sucção</li>
                 </ul>
                 <div style="background: #f8fafc; padding: 12px; border-radius: 10px; font-size: 0.82rem; color: var(--text-muted); text-align: center; border: 1px solid var(--border-light);">
                     <i class="fa-solid fa-credit-card" style="color: var(--primary);"></i> Aceitamos cartões de crédito/débito no local
@@ -1006,137 +1104,171 @@
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="sobre" class="section-padding">
-        <div class="container">
-            <div class="about-grid">
-                <div>
-                    <span class="badge badge-cyan">Sobre o Profissional</span>
-                    <h2 class="section-title">Profissionalismo, Pontualidade e Cuidado com Seu Lar</h2>
-                    <div style="color: var(--text-main); margin-top: 16px;">
-                        <p style="margin-bottom: 14px;">Seja para renovar o ambiente com móveis novos ou garantir o funcionamento perfeito dos seus eletrodomésticos, você precisa de um profissional experiente e de total confiança.</p>
-                        <p style="margin-bottom: 22px;">O <strong>Lucas Montador de Móveis & Instalações</strong> atua em Santiago - RS e região oferecendo atendimento direto, rápido e transparente. Trabalhamos com ferramentas de ponta para garantir acabamentos limpos e preservação dos seus pertences.</p>
-                    </div>
-
-                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o." target="_blank" class="btn btn-primary">
-                        <i class="fa-brands fa-whatsapp"></i> Falar Diretamente com o Lucas
-                    </a>
-                </div>
-
-                <div class="card-frame">
-                    <img src="cartao_lucas.jpeg" alt="Cartão de Visita Lucas Montador" onerror="handleImgError(this, 'cartao', 'cartao_lucas')">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SERVICES SECTION -->
+    <!-- INTERACTIVE SERVICES CAROUSEL SECTION -->
     <section id="servicos" class="section-padding bg-light">
         <div class="container">
             <div class="section-header">
-                <span class="badge badge-cyan">Especialidades</span>
-                <h2 class="section-title">Soluções Completas no Mesmo Lugar</h2>
-                <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.95rem;">Clique nas abas abaixo para explorar nossas áreas de atendimento técnico em Santiago.</p>
+                <span class="badge badge-cyan">Especialidades Técnicas</span>
+                <h2 class="section-title">Carrossel de Serviços Especializados</h2>
+                <p style="color: var(--text-muted); margin-top: 8px; font-size: 0.95rem;">Deslize pelas nossas soluções para conhecer detalhes, procedimentos e solicitar atendimento imediato.</p>
             </div>
 
-            <!-- Tab Navigation -->
-            <div class="services-nav">
-                <button class="service-tab-btn active" onclick="switchServiceTab('tab-furniture', this)">
-                    <i class="fa-solid fa-couch"></i> Montagem de Móveis
-                </button>
-                <button class="service-tab-btn" onclick="switchServiceTab('tab-air', this)">
-                    <i class="fa-solid fa-snowflake"></i> Ar-Condicionado & Climatização
-                </button>
-                <button class="service-tab-btn" onclick="switchServiceTab('tab-appliances', this)">
-                    <i class="fa-solid fa-plug"></i> Conserto de Eletrodomésticos
-                </button>
+            <!-- Carousel Component -->
+            <div class="carousel-wrapper">
+                <div class="carousel-track" id="servicesTrack">
+                    
+                    <!-- Slide 1: Instalação de Ar Condicionado -->
+                    <div class="carousel-slide">
+                        <div>
+                            <div class="slide-img-box">
+                                <img src="lucas1.jpeg" alt="Instalação Interna de Ar Condicionado" onerror="handleImgError(this, 'ac_indoor', 'lucas1')">
+                                <span class="slide-badge"><i class="fa-solid fa-snowflake"></i> Climatização</span>
+                            </div>
+                            <div class="slide-body">
+                                <div>
+                                    <h3 class="slide-title">Instalação de Ar-Condicionado Split</h3>
+                                    <p class="slide-desc">Instalação de aparelhos novos e seminovos seguindo rigorosamente os padrões dos fabricantes para preservar sua garantia de fábrica.</p>
+                                    <ul class="slide-features">
+                                        <li>Cálculo correto de carga de gás R410a / R32</li>
+                                        <li>Vacuo na tubulação com bomba dedicada</li>
+                                        <li>Fixação reforçada em alvenaria e madeira</li>
+                                    </ul>
+                                </div>
+                                <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Gostaria%20de%20um%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> Cotar Instalação de Ar
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 2: Higienização Preventiva -->
+                    <div class="carousel-slide">
+                        <div>
+                            <div class="slide-img-box">
+                                <img src="lucas6.jpeg" alt="Higienização de Ar-Condicionado com Bolsa Coletora" onerror="handleImgError(this, 'cleaning', 'lucas6')">
+                                <span class="slide-badge"><i class="fa-solid fa-pump-soap"></i> Saúde & Ar Limpo</span>
+                            </div>
+                            <div class="slide-body">
+                                <div>
+                                    <h3 class="slide-title">Higienização Profissional Preventiva</h3>
+                                    <p class="slide-desc">Limpeza profunda da evaporadora com lavadora de alta pressão e bolsa coletora, eliminando mofo, fungos e ácaros sem sujar o cômodo.</p>
+                                    <ul class="slide-features">
+                                        <li>Aplicação de bactericida biodegradável</li>
+                                        <li>Uso de bolsa coletora de resíduos sem respingos</li>
+                                        <li>Melhoria da eficiência energética e fluxo de ar</li>
+                                    </ul>
+                                </div>
+                                <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Preciso%20de%20Higieniza%C3%A7%C3%A3o%20Limpeza%20de%20Ar-Condicionado." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> Cotar Higienização
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Perfuração Técnica Sem Sujeira -->
+                    <div class="carousel-slide">
+                        <div>
+                            <div class="slide-img-box">
+                                <img src="lucas9.jpeg" alt="Perfuração de Parede com Broca Copo e Coletor" onerror="handleImgError(this, 'drilling', 'lucas9')">
+                                <span class="slide-badge"><i class="fa-solid fa-hammer"></i> Técnica Limpa</span>
+                            </div>
+                            <div class="slide-body">
+                                <div>
+                                    <h3 class="slide-title">Perfuração com Broca Copo & Proteção</h3>
+                                    <p class="slide-desc">Abertura de passagens para tubulação de cobre utilizando broca diamantada profissional e coletor de poeira para um ambiente limpo.</p>
+                                    <ul class="slide-features">
+                                        <li>Perfuração cilíndrica perfeita sem quebrar reboco</li>
+                                        <li>Captação de poeira de tijolo durante a furação</li>
+                                        <li>Vedação com silicone e espuma expansiva</li>
+                                    </ul>
+                                </div>
+                                <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Quero%20saber%20mais%20sobre%20instala%C3%A7%C3%A3o%20limpa%20de%20climatiza%C3%A7%C3%A3o." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> Consultar Instalação
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 4: Infraestrutura & Tubulação de Cobre -->
+                    <div class="carousel-slide">
+                        <div>
+                            <div class="slide-img-box">
+                                <img src="lucas8.jpeg" alt="Instalação de Tubulação e Isolamento Térmico" onerror="handleImgError(this, 'piping', 'lucas8')">
+                                <span class="slide-badge"><i class="fa-solid fa-gears"></i> Infraestrutura</span>
+                            </div>
+                            <div class="slide-body">
+                                <div>
+                                    <h3 class="slide-title">Infraestrutura & Tubulação Térmica</h3>
+                                    <p class="slide-desc">Passagem e isolamento duplo de tubos de cobre resistentes, conectando a condensadora externa sem vazamentos de gás.</p>
+                                    <ul class="slide-features">
+                                        <li>Tubos de cobre puro com roscas e flanges precisas</li>
+                                        <li>Isolamento blindado contra raios UV e calor</li>
+                                        <li>Suporte reforçado em alvenaria externa</li>
+                                    </ul>
+                                </div>
+                                <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Preciso%20de%20infraestrutura%2Ftubula%C3%A7%C3%A3o%20para%20ar-condicionado." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> Cotar Tubulação
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Montagem de Cozinhas & Móveis -->
+                    <div class="carousel-slide">
+                        <div>
+                            <div class="slide-img-box">
+                                <img src="lucas5.jpeg" alt="Montagem de Cozinha Modulada Completa" onerror="handleImgError(this, 'cozinha', 'lucas5')">
+                                <span class="slide-badge"><i class="fa-solid fa-couch"></i> Montagem de Móveis</span>
+                            </div>
+                            <div class="slide-body">
+                                <div>
+                                    <h3 class="slide-title">Cozinhas Moduladas & Planejadas</h3>
+                                    <p class="slide-desc">Montagem completa de armários modulados, pias inox, instalação de cooktops, depuradores de ar e alinhamento de portas.</p>
+                                    <ul class="slide-features">
+                                        <li>Recortes precisos para cooktops e torneiras</li>
+                                        <li>Nivelamento em superfícies irretocáveis</li>
+                                        <li>Fixação ultra resistente em parede</li>
+                                    </ul>
+                                </div>
+                                <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Gostaria%20de%20or%C3%A7amento%20para%20montagem%20de%20cozinha%20ou%20m%C3%B3veis." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> Cotar Montagem de Móveis
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 6: Conserto de Eletrodomésticos & Geladeiras -->
+                    <div class="carousel-slide">
+                        <div>
+                            <div class="slide-img-box">
+                                <img src="lucas2.jpeg" alt="Manutenção de Geladeiras e Condensadoras" onerror="handleImgError(this, 'ac_outdoor', 'lucas2')">
+                                <span class="slide-badge"><i class="fa-solid fa-plug"></i> Eletros & Refrigeração</span>
+                            </div>
+                            <div class="slide-body">
+                                <div>
+                                    <h3 class="slide-title">Conserto de Máquinas de Lavar e Geladeiras</h3>
+                                    <p class="slide-desc">Assistência técnica residencial para lavadoras de roupa, geladeiras, refrigeradores e aparelhos de refrigeração.</p>
+                                    <ul class="slide-features">
+                                        <li>Troca de peças originais com garantia de serviço</li>
+                                        <li>Diagnóstico preciso em problemas de refrigeração</li>
+                                        <li>Atendimento rápido em Santiago - RS</li>
+                                    </ul>
+                                </div>
+                                <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Preciso%20de%20conserto%20para%20minha%20m%C3%A1quina%20de%20lavar%20ou%20geladeira." target="_blank" class="btn btn-whatsapp" style="width: 100%;">
+                                    <i class="fa-brands fa-whatsapp"></i> Cotar Conserto de Eletros
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
 
-            <!-- Service Panel 1: Furniture -->
-            <div id="tab-furniture" class="service-panel active">
-                <div class="service-card">
-                    <div>
-                        <div class="service-icon-wrapper"><i class="fa-solid fa-couch"></i></div>
-                        <h3 style="font-size: 1.3rem;">Montagem & Desmontagem</h3>
-                        <ul class="service-card-list">
-                            <li>Móveis novos e usados (guarda-roupas, camas, mesas)</li>
-                            <li>Ajustes precisos de portas de correr e gaveteiros</li>
-                            <li>Embalagem e cuidado para mudanças residenciais</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20or%C3%A7amento%20para%20montagem%2Fdesmontagem%20de%20m%C3%B3veis." target="_blank" class="btn btn-outline" style="width: 100%;">Cotar Móveis</a>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <div class="service-icon-wrapper"><i class="fa-solid fa-tv"></i></div>
-                        <h3 style="font-size: 1.3rem;">Cozinhas & Painéis de TV</h3>
-                        <ul class="service-card-list">
-                            <li>Instalação de cozinhas moduladas e armários suspensos</li>
-                            <li>Fixação de painéis para TV com suporte reforçado</li>
-                            <li>Recortes em tampos de pia e bancadas</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20or%C3%A7amento%20para%20instala%C3%A7%C3%A3o%20de%20cozinha%20ou%20painel." target="_blank" class="btn btn-outline" style="width: 100%;">Cotar Instalação</a>
-                </div>
-            </div>
-
-            <!-- Service Panel 2: Air Conditioning -->
-            <div id="tab-air" class="service-panel">
-                <div class="service-card">
-                    <div>
-                        <div class="service-icon-wrapper"><i class="fa-solid fa-snowflake"></i></div>
-                        <h3 style="font-size: 1.3rem;">Instalação & Venda</h3>
-                        <ul class="service-card-list">
-                            <li>Venda de aparelhos de Ar-Condicionado novos</li>
-                            <li>Instalação técnica seguindo normas dos fabricantes</li>
-                            <li>Infraestrutura e tubulação de cobre reforçada</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20instala%C3%A7%C3%A3o%20ou%20compra%20de%20ar-condicionado." target="_blank" class="btn btn-outline" style="width: 100%;">Cotar Climatização</a>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <div class="service-icon-wrapper"><i class="fa-solid fa-pump-soap"></i></div>
-                        <h3 style="font-size: 1.3rem;">Higienização Preventiva</h3>
-                        <ul class="service-card-list">
-                            <li>Limpeza profunda com bactericida certificado</li>
-                            <li>Eliminação de ácaros, fungos e mofo do sistema</li>
-                            <li>Recarga de gás e manutenção corretiva</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20limpeza%2Fhigieniza%C3%A7%C3%A3o%20de%20ar-condicionado." target="_blank" class="btn btn-outline" style="width: 100%;">Cotar Higienização</a>
-                </div>
-            </div>
-
-            <!-- Service Panel 3: Home Appliances -->
-            <div id="tab-appliances" class="service-panel">
-                <div class="service-card">
-                    <div>
-                        <div class="service-icon-wrapper"><i class="fa-solid fa-soap"></i></div>
-                        <h3 style="font-size: 1.3rem;">Conserto de Máquinas & Geladeiras</h3>
-                        <ul class="service-card-list">
-                            <li>Manutenção técnica de Máquinas de Lavar Roupas</li>
-                            <li>Conserto de Refrigeradores e Geladeiras</li>
-                            <li>Troca de peças originais com garantia de serviço</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20conserto%20de%20m%C3%A1quina%20de%20lavar%20ou%20geladeira." target="_blank" class="btn btn-outline" style="width: 100%;">Cotar Conserto</a>
-                </div>
-
-                <div class="service-card">
-                    <div>
-                        <div class="service-icon-wrapper"><i class="fa-solid fa-fire-burner"></i></div>
-                        <h3 style="font-size: 1.3rem;">Instalação de Eletros</h3>
-                        <ul class="service-card-list">
-                            <li>Instalação de Depuradores de Ar e Coifas</li>
-                            <li>Instalação de Cooktops a gás ou indução</li>
-                            <li>Conexão de Purificadores e Filtros de Água</li>
-                        </ul>
-                    </div>
-                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20preciso%20de%20instala%C3%A7%C3%A3o%20de%20depurador%2Fcooktop%2Fpurificador." target="_blank" class="btn btn-outline" style="width: 100%;">Cotar Instalação Eletro</a>
-                </div>
+            <!-- Carousel Controls & Indicators -->
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevSlideBtn" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="carousel-indicators" id="carouselIndicators"></div>
+                <button class="carousel-btn" id="nextSlideBtn" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
 
             <!-- ONLINE BUDGET ESTIMATOR -->
@@ -1151,16 +1283,16 @@
                     <div class="form-group">
                         <label>Tipo de Serviço:</label>
                         <select id="estService" class="form-control" onchange="updateEstimator()">
-                            <option value="Montagem de Móveis">Montagem de Móveis</option>
                             <option value="Instalação de Ar-Condicionado">Instalação de Ar-Condicionado</option>
                             <option value="Higienização de Ar-Condicionado">Higienização de Ar-Condicionado</option>
+                            <option value="Montagem de Móveis / Cozinha">Montagem de Móveis / Cozinha</option>
                             <option value="Conserto de Eletrodoméstico">Conserto de Eletrodoméstico</option>
                         </select>
                     </div>
 
                     <div class="form-group">
                         <label>Item ou Equipamento:</label>
-                        <input id="estItem" type="text" placeholder="Ex: Guarda-Roupa 6 portas ou Cozinha" class="form-control" oninput="updateEstimator()">
+                        <input id="estItem" type="text" placeholder="Ex: Ar Split 12.000 BTUs ou Cozinha Modulada" class="form-control" oninput="updateEstimator()">
                     </div>
 
                     <div class="form-group">
@@ -1170,7 +1302,7 @@
                 </div>
 
                 <div style="text-align: center;">
-                    <a id="btnEstimatorWhatsapp" href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Solicito%20or%C3%A7amento%20para%20Montagem%20de%20M%C3%B3veis." target="_blank" class="btn btn-whatsapp" style="padding: 14px 28px;">
+                    <a id="btnEstimatorWhatsapp" href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Solicito%20or%C3%A7amento%20para%20Instala%C3%A7%C3%A3o%20de%20Ar-Condicionado." target="_blank" class="btn btn-whatsapp" style="padding: 14px 28px;">
                         <i class="fa-brands fa-whatsapp"></i> Enviar Pedido Personalizado no WhatsApp
                     </a>
                 </div>
@@ -1178,129 +1310,218 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO SECTION -->
-    <section id="portfolio" class="section-padding">
+    <!-- VIDEO SHOWCASE SECTION -->
+    <section id="video-demonstracao" class="section-padding">
         <div class="container">
-            <div class="section-header">
-                <span class="badge badge-cyan">Portfólio Real</span>
-                <h2 class="section-title">Galeria de Trabalhos Executados</h2>
-                <p style="color: var(--text-muted); margin-top: 6px; font-size: 0.92rem;">Confira fotos reais de móveis e instalações concluídas em Santiago - RS.</p>
-            </div>
-
-            <!-- Portfolio Filter Buttons -->
-            <div class="portfolio-filters">
-                <button class="filter-btn active" onclick="filterPortfolio('all', this)">Todos os Trabalhos</button>
-                <button class="filter-btn" onclick="filterPortfolio('cozinha', this)">Cozinhas</button>
-                <button class="filter-btn" onclick="filterPortfolio('dormitorio', this)">Dormitórios</button>
-                <button class="filter-btn" onclick="filterPortfolio('salas', this)">Salas & Painéis</button>
-            </div>
-
-            <!-- Portfolio Grid -->
-            <div class="portfolio-grid">
-                <!-- Item 1 -->
-                <div class="portfolio-item" data-category="cozinha" onclick="openLightbox('movel1.jpg', 'Cozinha Modulada com Pia & Cooktop', 'Montagem completa de armários superiores, balcão inox, cooktop e purificador de água em Santiago.')">
-                    <div class="portfolio-img-box">
-                        <img src="movel1.jpg" alt="Montagem Cozinha com Pia" onerror="handleImgError(this, 'sink', 'movel1')">
-                    </div>
-                    <div class="portfolio-details">
-                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Cozinha Modulada</span>
-                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Cozinha com Balcão & Pia Inox</h4>
-                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Ajustes de hidráulica, cooktop e purificador de água.</p>
-                    </div>
+            <div class="video-section-card">
+                <div>
+                    <span class="badge badge-cyan" style="color: #38bdf8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.1);">
+                        <i class="fa-solid fa-play"></i> Vídeo de Trabalho Real
+                    </span>
+                    <h2 style="color: white; font-size: 2rem; margin: 12px 0 16px;">Técnica e Segurança em Altura</h2>
+                    <p style="color: #cbd5e1; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.6;">
+                        Veja na prática a execução técnica de uma instalação externa de condensadora de ar-condicionado. Fixação segura, acabamento de fiação limpo e respeito às estruturas da residência.
+                    </p>
+                    <ul style="list-style: none; margin-bottom: 24px;">
+                        <li style="padding: 6px 0; color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-check" style="color: #38bdf8;"></i> Suportes galvanizados anti-corrosão
+                        </li>
+                        <li style="padding: 6px 0; color: #e2e8f0; font-size: 0.9rem; display: flex; align-items: center; gap: 10px;">
+                            <i class="fa-solid fa-check" style="color: #38bdf8;"></i> Vedação total contra infiltração nas telhas e paredes
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Vi%20seu%20v%C3%ADdeo%20de%20instala%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> Agendar Instalação Segura
+                    </a>
                 </div>
 
-                <!-- Item 2 -->
-                <div class="portfolio-item" data-category="cozinha" onclick="openLightbox('movel2.jpeg', 'Cozinha Completa Branca com Cristaleira', 'Alinhamento perfeito de módulos, portas de vidro, nichos para forno e micro-ondas.')">
-                    <div class="portfolio-img-box">
-                        <img src="movel2.jpeg" alt="Cozinha Completa Branca" onerror="handleImgError(this, 'cozinha', 'movel2')">
-                    </div>
-                    <div class="portfolio-details">
-                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Móveis Sob Medida</span>
-                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Cozinha Completa com Cristaleira</h4>
-                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Acabamento perfeito e alinhamento de portas.</p>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="portfolio-item" data-category="dormitorio" onclick="openLightbox('movel3.jpg', 'Guarda-Roupa de Correr com Espelho', 'Montagem de roupeiro grande com portas de correr, espelho central e regulagem suave.')">
-                    <div class="portfolio-img-box">
-                        <img src="movel3.jpg" alt="Guarda-Roupa com Espelho" onerror="handleImgError(this, 'wardrobe', 'movel3')">
-                    </div>
-                    <div class="portfolio-details">
-                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Dormitórios</span>
-                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Guarda-Roupa de Correr com Espelho</h4>
-                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Roldanas alinhadas para deslize leve e seguro.</p>
-                    </div>
-                </div>
-
-                <!-- Item 4 -->
-                <div class="portfolio-item" data-category="salas" onclick="openLightbox('movel_com_logomarca.jpeg', 'Painéis de TV & Ambientes de Sala', 'Fixação segura na parede, nivelamento e organização de fiação de equipamentos.')">
-                    <div class="portfolio-img-box">
-                        <img src="movel_com_logomarca.jpeg" alt="Painel de TV Lucas Montador" onerror="handleImgError(this, 'panel', 'movel_com_logomarca')">
-                    </div>
-                    <div class="portfolio-details">
-                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Salas & Painéis</span>
-                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Painéis de TV, Racks & Módulos</h4>
-                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Instalações reforçadas em paredes com prumo perfeito.</p>
-                    </div>
+                <div class="video-wrapper">
+                    <video controls playsinline preload="metadata" poster="lucas1.jpeg">
+                        <source src="lucas1.mp4" type="video/mp4">
+                        <source src="WhatsApp Video 2026-09-06 at 09.05.04.mp4" type="video/mp4">
+                        Seu navegador não suporta a reprodução de vídeo HTML5.
+                    </video>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LIGHTBOX MODAL -->
-    <div id="lightboxModal">
-        <div class="lightbox-content">
-            <button class="close-lightbox" onclick="closeLightbox()">&times;</button>
-            <img id="lightboxImg" src="" alt="Ampliação de trabalho realizado">
-            <div class="lightbox-caption">
-                <h3 id="lightboxTitle" style="font-size: 1.2rem;"></h3>
-                <p id="lightboxDesc" style="color: var(--text-muted); font-size: 0.88rem; margin-top: 4px;"></p>
+    <!-- ABOUT SECTION -->
+    <section id="sobre" class="section-padding bg-light">
+        <div class="container">
+            <div class="about-grid">
+                <div>
+                    <span class="badge badge-cyan">Sobre o Profissional</span>
+                    <h2 class="section-title">Profissionalismo, Pontualidade e Cuidado com Seu Lar</h2>
+                    <div style="color: var(--text-main); margin-top: 16px;">
+                        <p style="margin-bottom: 14px;">Seja para renovar o ambiente com móveis novos ou garantir o funcionamento perfeito dos seus eletrodomésticos e ar-condicionado, você precisa de um profissional experiente e de total confiança.</p>
+                        <p style="margin-bottom: 22px;">O <strong>Lucas Instalações</strong> atua em Santiago - RS e região oferecendo atendimento direto, rápido e transparente. Trabalhamos com ferramentas de ponta para garantir acabamentos limpos e preservação dos seus pertences.</p>
+                    </div>
+
+                    <a href="https://wa.me/5555997117268?text=Ol%C3%A1%2C%20Lucas!%20Gostaria%20de%20agendar%20um%20servi%C3%A7o." target="_blank" class="btn btn-primary">
+                        <i class="fa-brands fa-whatsapp"></i> Falar Diretamente com o Lucas
+                    </a>
+                </div>
+
+                <div class="card-frame">
+                    <img src="cartao_lucas.jpeg" alt="Cartão de Visita Lucas Montador" onerror="handleImgError(this, 'cartao', 'cartao_lucas')">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- DIFFERENTIALS SECTION -->
-    <section id="diferenciais" class="section-padding bg-light">
+    <!-- PORTFOLIO GALLERY SECTION -->
+    <section id="portfolio" class="section-padding">
         <div class="container">
             <div class="section-header">
-                <span class="badge badge-cyan">Por Que Escolher</span>
-                <h2 class="section-title">Nossos Diferenciais de Atendimento</h2>
+                <span class="badge badge-cyan">Portfólio Real de Obras</span>
+                <h2 class="section-title">Galeria de Trabalhos Executados</h2>
+                <p style="color: var(--text-muted); margin-top: 6px; font-size: 0.92rem;">Fotos reais de serviços de climatização, furações técnicas e montagens de móveis em Santiago - RS.</p>
             </div>
 
-            <div class="diff-grid">
-                <div class="diff-card">
-                    <i class="fa-solid fa-broom"></i>
-                    <h4>Serviço Limpo e Organizado</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Deixamos o local da montagem totalmente limpo e pronto para uso.</p>
-                </div>
-                <div class="diff-card">
-                    <i class="fa-solid fa-clock"></i>
-                    <h4>Pontualidade Garantida</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Respeitamos rigorosamente o horário agendado para o seu atendimento.</p>
-                </div>
-                <div class="diff-card">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <h4>Garantia em Todos os Serviços</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Trabalho técnico executado com responsabilidade e garantia formal.</p>
-                </div>
-                <div class="diff-card">
-                    <i class="fa-solid fa-credit-card"></i>
-                    <h4>Pagamento Facilitado</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted);">Aceitamos cartões de crédito e débito no local do atendimento.</p>
-                </div>
+            <!-- Portfolio Filter Buttons -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" onclick="filterPortfolio('all', this)">Todos os Trabalhos</button>
+                <button class="filter-btn" onclick="filterPortfolio('climatizacao', this)">Ar-Condicionado</button>
+                <button class="filter-btn" onclick="filterPortfolio('cozinha', this)">Cozinhas & Móveis</button>
+                <button class="filter-btn" onclick="filterPortfolio('tecnica', this)">Técnica & Furação</button>
             </div>
 
-            <!-- Payment Methods -->
-            <div class="payment-box">
-                <h4 style="font-size: 1.1rem;">Bandeiras de Cartões & Meios de Pagamento Aceitos</h4>
-                <div class="payment-badges">
-                    <div class="pay-badge"><i class="fa-brands fa-cc-mastercard" style="color: #eb001b;"></i> Mastercard</div>
-                    <div class="pay-badge"><i class="fa-brands fa-cc-visa" style="color: #1a1f71;"></i> Visa</div>
-                    <div class="pay-badge"><i class="fa-solid fa-credit-card" style="color: #00a4e4;"></i> Elo</div>
-                    <div class="pay-badge"><i class="fa-brands fa-cc-amex" style="color: #2e77bc;"></i> Hipercard / Amex</div>
-                    <div class="pay-badge"><i class="fa-solid fa-pix" style="color: #32bcad;"></i> Pix Instantâneo</div>
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                
+                <!-- Item 1: Lucas1 (AC Gree Indoor) -->
+                <div class="portfolio-item" data-category="climatizacao" onclick="openLightbox('lucas1.jpeg', 'Instalação Interna de Ar Gree', 'Fixação perfeita e alinhada acima de cortina persiana em ambiente residencial.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas1.jpeg" alt="Ar Condicionado Gree Instalado" onerror="handleImgError(this, 'ac_indoor', 'lucas1')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Climatização</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Ar Split Gree 12.000 BTUs</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Instalação com acabamento embutido e rebaixamento em gesso.</p>
+                    </div>
                 </div>
+
+                <!-- Item 2: Lucas6 (Cleaning with Bag) -->
+                <div class="portfolio-item" data-category="climatizacao" onclick="openLightbox('lucas6.jpeg', 'Higienização Preventiva com Bolsa Coletora', 'Lucas em ação realizando lavagem com bactericida e bolsa impermeável para não sujar a parede.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas6.jpeg" alt="Higienização de Ar Condicionado" onerror="handleImgError(this, 'cleaning', 'lucas6')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Limpeza Sanitária</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Higienização de Evaporadora</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Uso de bolsa coletora profissional sem derramar resíduos.</p>
+                    </div>
+                </div>
+
+                <!-- Item 3: Lucas5 (Kitchen Assembly) -->
+                <div class="portfolio-item" data-category="cozinha" onclick="openLightbox('lucas5.jpeg', 'Cozinha Modulada & Planejada Completa', 'Montagem de armários, instalação de depurador de ar, cooktop e balcão em madeira e granito.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas5.jpeg" alt="Cozinha Modulada Montada" onerror="handleImgError(this, 'cozinha', 'lucas5')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Móveis & Cozinhas</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Cozinha Modulada com Cooktop</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Alinhamento fino de portas e gavetas com puxadores perfil.</p>
+                    </div>
+                </div>
+
+                <!-- Item 4: Lucas9 (Drilling Core) -->
+                <div class="portfolio-item" data-category="tecnica" onclick="openLightbox('lucas9.jpeg', 'Perfuração com Broca Copo Diamantada', 'Abertura de orifício para passagem de tubos utilizando broca copo técnica e coletor de poeira.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas9.jpeg" alt="Perfuração de Parede com Coletor" onerror="handleImgError(this, 'drilling', 'lucas9')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Técnica Limpa</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Furação sem Danificar Reboco</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Proteção plástica para poeira e precisão milimétrica.</p>
+                    </div>
+                </div>
+
+                <!-- Item 5: Lucas8 (Piping Insulation) -->
+                <div class="portfolio-item" data-category="tecnica" onclick="openLightbox('lucas8.jpeg', 'Isolamento de Tubulação em Cobre', 'Lucas preparando chicote elétrico e isolamento duplo de tubulação em parede tijolo à vista.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas8.jpeg" alt="Preparo de Tubulação de Cobre" onerror="handleImgError(this, 'piping', 'lucas8')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Infraestrutura</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Tubulação Térmica Blindada</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Conexões perfeitas com proteção contra intempéries.</p>
+                    </div>
+                </div>
+
+                <!-- Item 6: Lucas2 (Outdoor Unit) -->
+                <div class="portfolio-item" data-category="climatizacao" onclick="openLightbox('lucas2.jpeg', 'Condensadora Externa Gree em Fachada', 'Instalação de unidade condensadora externa com suportes reforçados e proteção contra ventos.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas2.jpeg" alt="Condensadora Externa Gree" onerror="handleImgError(this, 'ac_outdoor', 'lucas2')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Unidade Externa</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Condensadora em Fachada</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Nivelamento rigoroso e fixação segura em altura.</p>
+                    </div>
+                </div>
+
+                <!-- Item 7: Lucas3 (Brastemp Indoor) -->
+                <div class="portfolio-item" data-category="climatizacao" onclick="openLightbox('lucas3.jpeg', 'Unidade Evaporadora Brastemp', 'Aparelho de ar-condicionado instalado com tomada dedicada e fiação limpa.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas3.jpeg" alt="Ar Condicionado Brastemp" onerror="handleImgError(this, 'ac_indoor', 'lucas3')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Climatização</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Ar Split Brastemp Ative!</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Testes de refrigeração e dreno calibrado.</p>
+                    </div>
+                </div>
+
+                <!-- Item 8: Lucas4 (Condenser modern house) -->
+                <div class="portfolio-item" data-category="climatizacao" onclick="openLightbox('lucas4.jpeg', 'Condensadora Externa em Prédio Moderno', 'Instalação discreta em coluna estrutural respeitando a fachada do edifício.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas4.jpeg" alt="Condensadora Discreta em Coluna" onerror="handleImgError(this, 'ac_outdoor', 'lucas4')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Residencial</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Instalação Discreta Externa</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Preservação do design arquitetônico da casa.</p>
+                    </div>
+                </div>
+
+                <!-- Item 9: Lucas10 (Clean Drilling with Bag) -->
+                <div class="portfolio-item" data-category="tecnica" onclick="openLightbox('lucas10.jpeg', 'Perfuração Limpa com Retenção de Poeira', 'Uso de saquinho de contenção acoplado à parede e furadeira DeWalt profissional para reter 100% dos resíduos.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas10.jpeg" alt="Perfuração de Parede Sem Sujeira" onerror="handleImgError(this, 'drilling', 'lucas10')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Técnica Limpa</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Furação sem Sujeira no Ambiente</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Proteção plástica exclusiva para retenção de poeira e detritos.</p>
+                    </div>
+                </div>
+
+                <!-- Item 10: Lucas11 (Lucas Uniformed Working) -->
+                <div class="portfolio-item" data-category="climatizacao" onclick="openLightbox('lucas11.jpeg', 'Atendimento Técnico Uniformizado', 'Lucas em ação realizando a instalação e conexão de unidade condensadora Xion Eco em parede externa.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas11.jpeg" alt="Atendimento Técnico de Ar-Condicionado" onerror="handleImgError(this, 'ac_outdoor', 'lucas11')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Serviço Profissional</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Atendimento Técnico Uniformizado</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Execução rigorosa com uniforme oficial e equipamentos adequados.</p>
+                    </div>
+                </div>
+
+                <!-- Item 11: Lucas12 (Condenser Unit Finished) -->
+                <div class="portfolio-item" data-category="climatizacao" onclick="openLightbox('lucas12.jpeg', 'Condensadora Xion Eco em Suporte Galvanizado', 'Visualização do suporte de alta resistência com alinhamento perfeito e fixação em parede de tijolos.')">
+                    <div class="portfolio-img-box">
+                        <img src="lucas12.jpeg" alt="Condensadora Xion Eco Instalada" onerror="handleImgError(this, 'ac_outdoor', 'lucas12')">
+                    </div>
+                    <div class="portfolio-details">
+                        <span style="font-size: 0.72rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">Climatização</span>
+                        <h4 style="font-size: 1.05rem; margin-top: 4px;">Montagem de Condensadora Xion Eco</h4>
+                        <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">Suporte metálico reforçado com vedação e nivelamento impecável.</p>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1309,8 +1530,8 @@
     <section class="section-padding">
         <div class="container">
             <div class="section-header">
-                <span class="badge badge-cyan">Avaliações</span>
-                <h2 class="section-title">O Que Dizem os Nossos Clientes</h2>
+                <span class="badge badge-cyan">Avaliações de Clientes</span>
+                <h2 class="section-title">O Que Dizem Nossos Clientes em Santiago</h2>
             </div>
 
             <div class="testimonials-grid">
@@ -1318,7 +1539,7 @@
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p style="font-style: italic; color: var(--text-main); margin-bottom: 16px; font-size: 0.92rem;">"O Lucas montou minha cozinha modulada e instalou a pia e o cooktop. Trabalho perfeito, alinhamento nota 10 e tudo muito limpo!"</p>
+                    <p style="font-style: italic; color: var(--text-main); margin-bottom: 16px; font-size: 0.92rem;">"O Lucas instalou meus dois ar-condicionados com sacola coletora de água e poeira, sem sujeira nenhuma na sala. Trabalho nota 100!"</p>
                     <strong style="color: var(--navy-deep); display: block;">Mariana S.</strong>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Santiago - RS</span>
                 </div>
@@ -1327,7 +1548,7 @@
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p style="font-style: italic; color: var(--text-main); margin-bottom: 16px; font-size: 0.92rem;">"Chamei para fazer a higienização do ar-condicionado e acabou consertando a minha máquina de lavar na mesma visita. Muito prático!"</p>
+                    <p style="font-style: italic; color: var(--text-main); margin-bottom: 16px; font-size: 0.92rem;">"Montou a cozinha inteira com cooktop e depurador no mesmo dia. Muito caprichoso no alinhamento das portas e gavetas."</p>
                     <strong style="color: var(--navy-deep); display: block;">Carlos A.</strong>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Santiago - RS</span>
                 </div>
@@ -1336,7 +1557,7 @@
                     <div class="stars">
                         <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                     </div>
-                    <p style="font-style: italic; color: var(--text-main); margin-bottom: 16px; font-size: 0.92rem;">"Muito educado e pontual. O guarda-roupa de portas de correr com espelho ficou lindo e perfeito. Recomendo com certeza!"</p>
+                    <p style="font-style: italic; color: var(--text-main); margin-bottom: 16px; font-size: 0.92rem;">"Muito educado, pontual e atencioso. Fez a higienização do ar e consertou minha lavadora no mesmo atendimento."</p>
                     <strong style="color: var(--navy-deep); display: block;">Fernanda L.</strong>
                     <span style="font-size: 0.8rem; color: var(--text-muted);">Santiago - RS</span>
                 </div>
@@ -1359,17 +1580,17 @@
                         <i class="fa-solid fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        Basta clicar em qualquer botão do WhatsApp no site ou mandar uma foto do seu móvel/equipamento para o número <strong>(55) 99711-7268</strong>. Respondemos rapidamente com o orçamento sem compromisso!
+                        Basta clicar em qualquer botão do WhatsApp no site ou mandar uma foto do seu equipamento para o número <strong>(55) 99711-7268</strong>. Respondemos rapidamente com o orçamento sem compromisso!
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <button class="faq-btn" onclick="toggleFaq(this)">
-                        <span>Você atende nos finais de semana?</span>
+                        <span>Qual é a diferença da Higienização Profissional Preventiva?</span>
                         <i class="fa-solid fa-chevron-down faq-icon"></i>
                     </button>
                     <div class="faq-answer">
-                        Sim! Agendamos atendimentos conforme a necessidade do cliente em Santiago e região, inclusive com horários flexíveis para quem trabalha durante a semana.
+                        Utilizamos lavadora pressurizada e bolsa coletora especial acoplada à evaporadora. Isso nos permite lavar as turbinas e serpentinas profundamente com bactericida sem molhar suas paredes, móveis ou piso.
                     </div>
                 </div>
 
@@ -1404,7 +1625,15 @@
                         </div>
 
                         <div style="display: flex; align-items: center; gap: 12px;">
-                            <i class="fa-solid fa-location-dot" style="font-size: 1.6rem; color: #38bdf8;"></i>
+                            <i class="fa-solid fa-globe" style="font-size: 1.5rem; color: #38bdf8;"></i>
+                            <div>
+                                <span style="display: block; font-weight: 700; font-size: 0.88rem;">Website Oficial</span>
+                                <span style="color: #cbd5e1; font-size: 0.88rem;">lucasinstalacoes.com.br</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; gap: 12px;">
+                            <i class="fa-solid fa-location-dot" style="font-size: 1.5rem; color: #38bdf8;"></i>
                             <div>
                                 <span style="display: block; font-weight: 700; font-size: 0.88rem;">Área de Cobertura</span>
                                 <span style="color: #cbd5e1; font-size: 0.9rem;">Santiago - RS e região circunvizinha</span>
@@ -1416,7 +1645,7 @@
                     <div style="margin-top: 25px;">
                         <span style="font-weight: 700; display: block; margin-bottom: 10px; font-size: 0.9rem;">Siga nas Redes Sociais:</span>
                         <div class="social-cards-list">
-                            <a href="https://www.instagram.com/lucas.instalacao?stkn=dzZseXhvcmd0eDZ0" target="_blank" class="social-card-item">
+                            <a href="https://www.instagram.com/lucas.instalacao" target="_blank" class="social-card-item">
                                 <span class="social-icon-circle instagram"><i class="fa-brands fa-instagram"></i></span>
                                 <div>
                                     <span style="display: block; font-size: 0.72rem; color: #38bdf8; font-weight: 800; text-transform: uppercase;">Instagram Profissional</span>
@@ -1424,7 +1653,7 @@
                                 </div>
                             </a>
 
-                            <a href="https://www.instagram.com/lucasmello7006?stkn=MWpjdjVyZWt4YXNyNw==" target="_blank" class="social-card-item">
+                            <a href="https://www.instagram.com/lucasmello7006" target="_blank" class="social-card-item">
                                 <span class="social-icon-circle instagram"><i class="fa-brands fa-instagram"></i></span>
                                 <div>
                                     <span style="display: block; font-size: 0.72rem; color: #38bdf8; font-weight: 800; text-transform: uppercase;">Instagram Serviços</span>
@@ -1432,7 +1661,7 @@
                                 </div>
                             </a>
 
-                            <a href="https://web.facebook.com/01montadorlucas/?_rdc=1&_rdr#" target="_blank" class="social-card-item">
+                            <a href="https://web.facebook.com/01montadorlucas" target="_blank" class="social-card-item">
                                 <span class="social-icon-circle facebook"><i class="fa-brands fa-facebook-f"></i></span>
                                 <div>
                                     <span style="display: block; font-size: 0.72rem; color: #38bdf8; font-weight: 800; text-transform: uppercase;">Facebook Oficial</span>
@@ -1458,7 +1687,7 @@
     <!-- FOOTER -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Lucas Montador de Móveis & Instalações. Todos os direitos reservados. Santiago - RS.</p>
+            <p>&copy; 2026 Lucas Instalações - Montagem de Móveis & Climatização. Santiago - RS. Todos os direitos reservados.</p>
         </div>
     </footer>
 
@@ -1468,16 +1697,127 @@
     </a>
 
     <script>
-        // Services Tab Switcher
-        function switchServiceTab(tabId, element) {
-            var tabs = document.querySelectorAll(".service-panel");
-            tabs.forEach(function(tab) { tab.classList.remove("active"); });
-            document.getElementById(tabId).classList.add("active");
+        // Interactive Services Carousel Logic
+        (function initCarousel() {
+            var track = document.getElementById('servicesTrack');
+            var prevBtn = document.getElementById('prevSlideBtn');
+            var nextBtn = document.getElementById('nextSlideBtn');
+            var indicatorsContainer = document.getElementById('carouselIndicators');
+            
+            if (!track) return;
 
-            var tabBtns = document.querySelectorAll(".service-tab-btn");
-            tabBtns.forEach(function(btn) { btn.classList.remove("active"); });
-            element.classList.add("active");
-        }
+            var slides = track.querySelectorAll('.carousel-slide');
+            var currentIndex = 0;
+            var autoPlayInterval;
+
+            function getVisibleSlidesCount() {
+                var w = window.innerWidth;
+                if (w < 640) return 1;
+                if (w < 992) return 2;
+                return 3;
+            }
+
+            function getMaxIndex() {
+                var visible = getVisibleSlidesCount();
+                return Math.max(0, slides.length - visible);
+            }
+
+            function renderIndicators() {
+                indicatorsContainer.innerHTML = '';
+                var maxIdx = getMaxIndex();
+                for (var i = 0; i <= maxIdx; i++) {
+                    var dot = document.createElement('div');
+                    dot.className = 'indicator-dot' + (i === currentIndex ? ' active' : '');
+                    dot.setAttribute('data-index', i);
+                    dot.addEventListener('click', function() {
+                        currentIndex = parseInt(this.getAttribute('data-index'));
+                        updateCarousel();
+                        resetAutoPlay();
+                    });
+                    indicatorsContainer.appendChild(dot);
+                }
+            }
+
+            function updateCarousel() {
+                var maxIdx = getMaxIndex();
+                if (currentIndex > maxIdx) currentIndex = maxIdx;
+                if (currentIndex < 0) currentIndex = 0;
+
+                var slideWidth = slides[0].getBoundingClientRect().width;
+                var gap = 24; // gap between slides in px
+                var amount = currentIndex * (slideWidth + gap);
+                track.style.transform = 'translateX(-' + amount + 'px)';
+
+                var dots = indicatorsContainer.querySelectorAll('.indicator-dot');
+                dots.forEach(function(dot, idx) {
+                    if (idx === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            prevBtn.addEventListener('click', function() {
+                currentIndex--;
+                if (currentIndex < 0) currentIndex = getMaxIndex();
+                updateCarousel();
+                resetAutoPlay();
+            });
+
+            nextBtn.addEventListener('click', function() {
+                currentIndex++;
+                if (currentIndex > getMaxIndex()) currentIndex = 0;
+                updateCarousel();
+                resetAutoPlay();
+            });
+
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(function() {
+                    currentIndex++;
+                    if (currentIndex > getMaxIndex()) currentIndex = 0;
+                    updateCarousel();
+                }, 5000);
+            }
+
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                startAutoPlay();
+            }
+
+            // Touch Swipe Support
+            var startX = 0;
+            var endX = 0;
+
+            track.addEventListener('touchstart', function(e) {
+                startX = e.touches[0].clientX;
+            }, { passive: true });
+
+            track.addEventListener('touchend', function(e) {
+                endX = e.changedTouches[0].clientX;
+                var diff = startX - endX;
+                if (Math.abs(diff) > 40) {
+                    if (diff > 0) {
+                        currentIndex++;
+                        if (currentIndex > getMaxIndex()) currentIndex = 0;
+                    } else {
+                        currentIndex--;
+                        if (currentIndex < 0) currentIndex = getMaxIndex();
+                    }
+                    updateCarousel();
+                    resetAutoPlay();
+                }
+            }, { passive: true });
+
+            window.addEventListener('resize', function() {
+                renderIndicators();
+                updateCarousel();
+            });
+
+            renderIndicators();
+            updateCarousel();
+            startAutoPlay();
+        })();
 
         // Interactive Online Budget Estimator
         function updateEstimator() {
